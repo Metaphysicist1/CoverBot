@@ -1,4 +1,5 @@
 # CoverBot
+### LLM+RAG-based chatbot for easy insight Retriviation
 ##### What's happening?
 * The user uploads a cover letter or other type of document which needs to be analyzed
 * Coverbot retrieves text data and gets ready to answer all important questions which the user is interested in document
