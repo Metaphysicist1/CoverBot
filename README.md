@@ -21,12 +21,11 @@ CoverBot is an intelligent chatbot powered by Large Language Models (LLM) and Re
 - ⚡ Real-time Response Generation
 
 ## 🛠️ Tech Stack
-- **Backend Framework:** FastAPI
 - **LLM Integration:** LangChain
 - **Vector Database:** Pinecone
-- **Language Model:** OpenAI GPT-4
-- **Frontend:** Streamlit
-- **Document Processing:** PyPDF2, docx2txt
+- **Language Model:** Gemini
+- **Backend/Frontend:** Streamlit
+- **Document Processing:** PyPDF2
 
 ## 🚀 Installation Guide
 
@@ -45,12 +44,12 @@ cd coverbot
 ### 2. Set Up Virtual Environment
 ```bash
 # For Windows
-python -m venv venv
-.\venv\Scripts\activate
+virtualenv .venv
+source .venv\Scripts\activate
 
 # For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+virtualenv .venv
+source .\venv\bin\activate
 ```
 
 ### 3. Install Dependencies
@@ -58,80 +57,21 @@ source venv/bin/activate
 # Core dependencies
 pip install -r requirements.txt
 
-# Additional dependencies
-pip install streamlit fastapi uvicorn langchain openai pinecone-client python-dotenv
-pip install pypdf2 python-docx docx2txt
-```
 
-### 4. Environment Configuration
-Create a `.env` file in the root directory:
-```bash
-touch .env
-```
 
-Add the following to your `.env` file:
-```env
-OPENAI_API_KEY=your_openai_api_key
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_ENV=your_pinecone_environment
-MODEL_NAME=gpt-4
-STREAMLIT_SERVER_PORT=8501
-```
 
-### 5. Database Setup
-```bash
-# Initialize Pinecone database
-python scripts/init_db.py
-```
 
-### 6. Running the Application
-```bash
-# Start the backend server
-uvicorn app.main:app --reload --port 8000
+
+
 
 # In a new terminal, start the frontend
 streamlit run frontend/app.py
 ```
 
-### 7. Verify Installation
-- Backend API: http://localhost:8000/docs
-- Frontend: http://localhost:8501
 
-## 📦 Project Structure
-```
-coverbot/
-├── app/
-│   ├── main.py
-│   ├── models.py
-│   └── utils.py
-├── frontend/
-│   └── app.py
-├── scripts/
-│   └── init_db.py
-├── tests/
-├── .env
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
 
-## 🔧 Troubleshooting
 
-### Common Issues
 
-1. **OpenAI API Error**
-```bash
-# Check API key
-echo $OPENAI_API_KEY
-# Verify API access
-python -c "import openai; openai.api_key='your-key'; print(openai.Model.list())"
-```
-
-2. **Pinecone Connection Issues**
-```bash
-# Verify Pinecone environment
-python scripts/test_pinecone.py
-```
 
 3. **Port Already in Use**
 ```bash
