@@ -169,8 +169,4 @@ We welcome contributions! Please follow these steps:
 - **Email:** edgarabasov1@gmail.com
 - **LinkedIn:** www.linkedin.com/in/edgar-abasov/
 
----
 
-<p align="center">
-Made with ❤️ by [Your Name/Team]
-</p>
