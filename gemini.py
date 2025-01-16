@@ -1,5 +1,5 @@
-from openai import OpenAI
 import os
+from dotenv import load_dotenv
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI, HarmBlockThreshold, HarmCategory
 from langchain.document_loaders import PyPDFLoader
@@ -8,6 +8,8 @@ from langchain.indexes import VectorstoreIndexCreator
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+
+load_dotenv('.config')
 key = os.environ.get('GOOGLE_API_KEY')
 
 
@@ -22,15 +24,6 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
     google_api_key=key,
 )
-
-# messages = [
-#     (
-#         "system",
-#         "You are a helpful assistant that can answer to any question at professional level. If you don't know the answer, you can ask for more information.",
-#     ),
-#     ("human", prompt),
-# ]
-# ai_msg = llm.invoke(messages)
 
 
 
