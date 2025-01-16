@@ -12,7 +12,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 load_dotenv('.config')
 key = os.environ.get('GOOGLE_API_KEY')
 
-
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-pro",
     safety_settings={
@@ -24,8 +23,6 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
     google_api_key=key,
 )
-
-
 
 @st.cache_resource
 def load_pdf():
