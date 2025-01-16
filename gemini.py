@@ -9,7 +9,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
-key = os.environ.get('GOOGLE_API_KEY')
+key = st.secrets["GOOGLE_API_KEY"]
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-pro",
