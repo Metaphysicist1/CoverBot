@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI, HarmBlockThreshold, HarmCategory
 from langchain.document_loaders import PyPDFLoader
@@ -9,7 +9,6 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
-load_dotenv('.config')
 key = os.environ.get('GOOGLE_API_KEY')
 
 llm = ChatGoogleGenerativeAI(
